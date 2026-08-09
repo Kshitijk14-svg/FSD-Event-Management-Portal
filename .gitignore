@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment — only .env.example is committed
+.env
+.env.*
+!.env.example
+
+# Build output (client, Phase 0 onwards)
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test output
+coverage/
+
+# Agent / editor tooling — local to each of us, not shared
+.claude/
+.cursor/
+.vscode/
+.idea/
+*.swp
+
+# Planning docs dropped at the repo root stay out of version control.
+# Root-scoped on purpose: the report and deck under docs/report/ must still
+# be committable in Phase 5. CLAUDE.md and docs/ ARE tracked.
+/*.docx
+/*.doc
+/*.pdf
+/*.pptx
+~$*
+
+# OS / OneDrive artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
