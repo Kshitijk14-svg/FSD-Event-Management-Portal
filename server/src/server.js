@@ -2,11 +2,13 @@
 import 'dotenv/config';
 
 import app from './app.js';
+import { connectDB } from './config/db.js';
 
 const PORT = process.env.PORT || 5000;
 
-// TODO (Kushagra): await connectDB() from ./config/db.js here once it exists.
+await connectDB();
 
 app.listen(PORT, () => {
   console.log(`[server] listening on http://localhost:${PORT}`);
 });
+
