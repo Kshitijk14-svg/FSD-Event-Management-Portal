@@ -1,10 +1,5 @@
-/**
- * Express 4 does not catch rejected promises, so an `await` that throws inside
- * a controller would hang the request forever. Wrapping the controller pipes
- * that rejection into next(), which reaches the global error handler.
- *
- * Usage: router.post('/', asyncHandler(createEvent))
- */
+// Express 4 doesn't catch rejected promises, so async controllers need this
+// wrapper to pass their errors to the error handler.
 export const asyncHandler = (fn) => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
