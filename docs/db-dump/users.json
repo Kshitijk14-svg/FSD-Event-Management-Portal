@@ -1,0 +1,146 @@
+[
+  {
+    "_id": "6addd16f96c97b56b446d068",
+    "name": "System Administrator",
+    "email": "admin@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "admin",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d069",
+    "name": "Elena Rostova",
+    "email": "organizer1@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "organizer",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06a",
+    "name": "Marcus Vance",
+    "email": "organizer2@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "organizer",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06b",
+    "name": "Sophia Chen",
+    "email": "organizer3@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "organizer",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06c",
+    "name": "Alex Johnson",
+    "email": "attendee1@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06d",
+    "name": "Priya Sharma",
+    "email": "attendee2@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06e",
+    "name": "Liam Smith",
+    "email": "attendee3@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d06f",
+    "name": "David Kim",
+    "email": "attendee4@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d070",
+    "name": "Maya Patel",
+    "email": "attendee5@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d071",
+    "name": "Chloe Taylor",
+    "email": "attendee6@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d072",
+    "name": "Ethan Wright",
+    "email": "attendee7@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d073",
+    "name": "Zoe Miller",
+    "email": "attendee8@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d074",
+    "name": "Noah Davis",
+    "email": "attendee9@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d075",
+    "name": "Emma Wilson",
+    "email": "attendee10@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d076",
+    "name": "Lucas Garcia",
+    "email": "attendee11@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  },
+  {
+    "_id": "6addd16f96c97b56b446d077",
+    "name": "Olivia Brown",
+    "email": "attendee12@event.com",
+    "password": "$2a$10$/MIrZp6ySwrSsp1c4bcRw.GQzkJgwT9SkNqupCuDLfWPHY2UIvN5S",
+    "role": "attendee",
+    "createdAt": "2026-10-25T09:52:47.430Z",
+    "updatedAt": "2026-10-25T09:52:47.430Z"
+  }
+]
