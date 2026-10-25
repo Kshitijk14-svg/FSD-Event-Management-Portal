@@ -24,3 +24,6 @@ build/
 
 # Internal planning (not project source)
 PROJECT_PLAN.md
+
+# Project plan (shared outside git)
+docs/Event-Portal-Project-Plan.docx
