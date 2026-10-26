@@ -1,0 +1,50 @@
+/* ErrorMessage Component Styles */
+.error-message-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background-color: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-lg);
+  color: var(--text-main);
+  margin: var(--space-4) 0;
+}
+
+.error-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-danger);
+  margin-bottom: var(--space-1);
+}
+
+.error-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-3);
+}
+
+.error-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}

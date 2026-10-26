@@ -1,0 +1,59 @@
+/* EventStatusBadge Component Styles */
+.event-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-full {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.status-ended {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+}
+
+.status-almost-full {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.status-open {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+@media (prefers-color-scheme: dark) {
+  .status-full {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+  }
+  .status-almost-full {
+    background-color: rgba(245, 158, 11, 0.25);
+    color: #fbbf24;
+  }
+  .status-open {
+    background-color: rgba(16, 185, 129, 0.25);
+    color: #34d399;
+  }
+}
