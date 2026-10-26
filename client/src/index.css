@@ -1,4 +1,6 @@
 @import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/pages.css';
 
 /* Global Reset & Base Setup */
 *, *::before, *::after {
