@@ -70,7 +70,7 @@ export default function Footer() {
               <li>
                 <span className="footer-meta-pill">
                   <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-success)' }} />
-                  Phase F2: Routing & Layout
+                  Phase F7: Responsive & Polish
                 </span>
               </li>
             </ul>

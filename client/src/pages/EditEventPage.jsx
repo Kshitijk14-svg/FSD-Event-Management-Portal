@@ -7,6 +7,7 @@ import { useToast } from '../context/useToast';
 import EventForm from '../components/EventForm';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function EditEventPage() {
   const { id } = useParams();
@@ -15,6 +16,7 @@ export default function EditEventPage() {
   const navigate = useNavigate();
 
   const [event, setEvent] = useState(null);
+  useDocumentTitle(event?.title ? `Edit: ${event.title}` : 'Edit Event');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

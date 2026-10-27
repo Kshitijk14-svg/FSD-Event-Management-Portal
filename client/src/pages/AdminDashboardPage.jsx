@@ -14,6 +14,7 @@ import CategoryBadge from '../components/CategoryBadge';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 import EmptyState from '../components/EmptyState';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 function formatDate(isoString) {
   if (!isoString) return 'Date TBD';
@@ -31,6 +32,7 @@ function formatDate(isoString) {
 }
 
 export default function AdminDashboardPage() {
+  useDocumentTitle('Admin Dashboard');
   const { user } = useAuth();
   const toast = useToast();
 

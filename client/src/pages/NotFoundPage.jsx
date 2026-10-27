@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function NotFoundPage() {
+  useDocumentTitle('404 Not Found');
   return (
     <div className="container page-section">
       <div className="not-found-wrapper">

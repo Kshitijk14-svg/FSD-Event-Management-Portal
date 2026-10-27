@@ -143,3 +143,13 @@
 .event-card-seats-count.is-full {
   color: var(--color-danger);
 }
+
+@media (max-width: 420px) {
+  .event-card-body {
+    padding: var(--space-4);
+  }
+  .event-card-media {
+    height: 170px;
+  }
+}
+

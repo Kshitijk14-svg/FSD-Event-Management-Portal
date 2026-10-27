@@ -4,8 +4,10 @@ import { createEvent } from '../api/organizer';
 import { useAuth } from '../context/useAuth';
 import { useToast } from '../context/useToast';
 import EventForm from '../components/EventForm';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function CreateEventPage() {
+  useDocumentTitle('Create Event');
   const { user } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();

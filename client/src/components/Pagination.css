@@ -22,6 +22,8 @@
   align-items: center;
   gap: 0.35rem;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pagination-btn {
@@ -41,6 +43,11 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   user-select: none;
+}
+
+.pagination-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .pagination-btn:hover:not(:disabled) {

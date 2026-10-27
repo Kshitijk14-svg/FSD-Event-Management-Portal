@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 /**
  * 403 Forbidden / Unauthorized Page
  * Displayed when an authenticated user attempts to access a route restricted to another role.
  */
 export default function UnauthorizedPage({ requiredRoles = [] }) {
+  useDocumentTitle('403 Access Denied');
   const { user } = useAuth();
 
   return (

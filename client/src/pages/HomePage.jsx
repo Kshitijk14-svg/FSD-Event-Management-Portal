@@ -4,8 +4,10 @@ import { fetchEvents } from '../api/events';
 import EventFilters from '../components/EventFilters';
 import EventGrid from '../components/EventGrid';
 import Pagination from '../components/Pagination';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function HomePage() {
+  useDocumentTitle('Browse Events');
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Parse filters from URL query string (Requirement 8)

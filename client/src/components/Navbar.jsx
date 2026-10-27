@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import './Navbar.css';
@@ -11,6 +11,18 @@ export default function Navbar() {
   const { user, role, isAuthenticated, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  // Close mobile drawer on Escape key for accessibility
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
 
   const handleLogout = () => {
     logout();
@@ -110,20 +122,30 @@ export default function Navbar() {
         {/* Mobile Hamburger Toggle Button */}
         <button
           type="button"
-          className="mobile-toggle-btn"
+          className={`mobile-toggle-btn ${mobileMenuOpen ? 'is-active' : ''}`}
           aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-nav"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
-          <span style={{ transform: mobileMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-          <span style={{ opacity: mobileMenuOpen ? 0 : 1 }} />
-          <span style={{ transform: mobileMenuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+          <span className="toggle-bar bar-1" />
+          <span className="toggle-bar bar-2" />
+          <span className="toggle-bar bar-3" />
         </button>
       </div>
 
+      {/* Backdrop overlay to close menu on outside tap */}
+      {mobileMenuOpen && (
+        <div
+          className="mobile-menu-backdrop"
+          onClick={closeMobileMenu}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-drawer">
+        <div id="mobile-nav" className="mobile-menu-drawer">
           <ul className="mobile-nav-links">
             <li>
               <NavLink to="/" end className={getNavLinkClass} onClick={closeMobileMenu}>

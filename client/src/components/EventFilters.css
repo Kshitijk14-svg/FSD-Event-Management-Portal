@@ -23,7 +23,7 @@
 
 .filter-search-box {
   flex: 1;
-  min-width: 280px;
+  min-width: min(100%, 260px);
   position: relative;
 }
 
@@ -128,8 +128,22 @@
   .filters-bottom-row {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--space-3);
   }
   .filter-control-group {
     min-width: 100%;
+  }
+  .filter-actions {
+    width: 100%;
+  }
+  .filter-actions .btn {
+    width: 100%;
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-filters-card {
+    padding: var(--space-4);
   }
 }

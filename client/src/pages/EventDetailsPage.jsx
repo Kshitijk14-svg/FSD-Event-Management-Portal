@@ -14,6 +14,7 @@ import EventStatusBadge from '../components/EventStatusBadge';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 import { DEFAULT_EVENT_IMAGE } from '../api/mockEventsAdapter';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 /**
  * Format ISO timestamp into human readable date & time
@@ -44,6 +45,7 @@ export default function EventDetailsPage() {
   const toast = useToast();
 
   const [event, setEvent] = useState(null);
+  useDocumentTitle(event?.title || 'Event Details');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [imgSrc, setImgSrc] = useState(null);

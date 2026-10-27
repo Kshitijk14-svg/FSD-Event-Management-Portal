@@ -62,6 +62,25 @@ export default function AttendeesModal({ eventId, eventTitle, onClose }) {
     };
   }, [eventId, user]);
 
+  // Lock body scroll and listen for Escape key
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="modal-attendees-title">
       <div className="attendees-modal-card" onClick={(e) => e.stopPropagation()}>

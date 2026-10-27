@@ -60,10 +60,14 @@ export default function EventFilters({
       {/* Top Search Input Row */}
       <div className="filters-top-row">
         <div className="filter-search-box">
+          <label htmlFor="filter-search-input" className="sr-only">
+            Search events
+          </label>
           <span className="filter-search-icon" aria-hidden="true">
             🔍
           </span>
           <input
+            id="filter-search-input"
             type="text"
             className="filter-search-input"
             placeholder="Search events by title, keyword, or venue..."

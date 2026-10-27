@@ -9,6 +9,7 @@ import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 import EmptyState from '../components/EmptyState';
 import AttendeesModal from '../components/AttendeesModal';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 function formatEventDate(dateString) {
   if (!dateString) return 'Date TBD';
@@ -28,6 +29,7 @@ function formatEventDate(dateString) {
 }
 
 export default function OrganizerDashboardPage() {
+  useDocumentTitle('Organizer Dashboard');
   const { user } = useAuth();
   const toast = useToast();
 
