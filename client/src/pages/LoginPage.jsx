@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import ErrorMessage from '../components/ErrorMessage';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function LoginPage() {
+  useDocumentTitle('Sign In');
   const { login, isMockSession } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();

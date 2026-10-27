@@ -154,24 +154,66 @@
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   padding: 8px;
   background: transparent;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   cursor: pointer;
   color: var(--text-main);
+  transition: all var(--transition-fast);
+  position: relative;
+  z-index: 101;
 }
 
-.mobile-toggle-btn span {
+.mobile-toggle-btn:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.mobile-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.mobile-toggle-btn .toggle-bar {
   display: block;
-  width: 100%;
+  width: 22px;
   height: 2px;
   background-color: currentColor;
   border-radius: 2px;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.mobile-toggle-btn.is-active .bar-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-toggle-btn.is-active .bar-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-toggle-btn.is-active .bar-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Backdrop Overlay */
+.mobile-menu-backdrop {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 98;
+  animation: fadeIn 0.2s ease-out;
 }
 
 /* Mobile Navigation Drawer */
@@ -196,7 +238,10 @@
     padding: var(--space-4) var(--container-padding) var(--space-6);
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border-subtle);
-    animation: slideDown 0.25s ease-out;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 99;
+    animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .mobile-nav-links {
@@ -208,8 +253,11 @@
 
   .mobile-nav-links .nav-link {
     width: 100%;
+    min-height: 44px;
     padding: 0.75rem 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
   }
 
   .mobile-user-section {
@@ -220,9 +268,23 @@
     border-top: 1px solid var(--border-subtle);
   }
 
+  .mobile-user-section .btn {
+    min-height: 42px;
+    justify-content: center;
+  }
+
   .mobile-user-section .user-profile-badge {
     border-radius: var(--radius-md);
     padding: 0.6rem 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-subtitle {
+    display: none;
+  }
+  .brand-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -235,4 +297,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

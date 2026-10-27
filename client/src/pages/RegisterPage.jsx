@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import ErrorMessage from '../components/ErrorMessage';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function RegisterPage() {
+  useDocumentTitle('Create Account');
   const { register } = useAuth();
   const navigate = useNavigate();
 

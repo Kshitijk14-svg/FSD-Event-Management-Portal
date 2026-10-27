@@ -8,6 +8,7 @@ import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 import EmptyState from '../components/EmptyState';
 import { DEFAULT_EVENT_IMAGE } from '../api/mockEventsAdapter';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 /**
  * Format registration date and event date cleanly
@@ -31,6 +32,7 @@ function formatEventSchedule(dateString) {
 }
 
 export default function MyRegistrationsPage() {
+  useDocumentTitle('My Registrations');
   const { user } = useAuth();
   const toast = useToast();
 
