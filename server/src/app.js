@@ -15,6 +15,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
 
 app.use(notFound);
 app.use(errorHandler);
