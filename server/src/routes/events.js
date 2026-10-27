@@ -9,6 +9,11 @@ const {
   updateEvent,
   deleteEvent,
 } = require('../controllers/eventController');
+const {
+  registerForEvent,
+  cancelRegistration,
+  eventAttendees,
+} = require('../controllers/registrationController');
 const { protect, authorize } = require('../middleware/auth');
 const validate = require('../middleware/validate');
 
@@ -45,5 +50,9 @@ router.post('/', protect, authorize('organizer', 'admin'), eventRules(true), val
 router.get('/:id', getEvent);
 router.put('/:id', protect, authorize('organizer', 'admin'), eventRules(false), validate, updateEvent);
 router.delete('/:id', protect, authorize('organizer', 'admin'), deleteEvent);
+
+router.post('/:id/register', protect, registerForEvent);
+router.delete('/:id/register', protect, cancelRegistration);
+router.get('/:id/attendees', protect, authorize('organizer', 'admin'), eventAttendees);
 
 module.exports = router;
