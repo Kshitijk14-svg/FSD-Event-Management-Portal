@@ -1,5 +1,6 @@
 const { Event, Registration } = require('../models');
 const httpError = require('../utils/httpError');
+const { searchEvents } = require('../utils/queries');
 
 const FIELDS = ['title', 'description', 'category', 'date', 'venue', 'capacity', 'price', 'imageUrl'];
 
@@ -18,6 +19,52 @@ const getOwnedEvent = async (req) => {
   if (!isOwner && req.user.role !== 'admin') throw httpError(403, 'You do not have permission to do this');
 
   return event;
+};
+
+const SORTS = ['date', '-date', 'newest'];
+const CATEGORIES = ['Tech', 'Music', 'Sports', 'Workshop', 'Cultural', 'Business', 'Other'];
+const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const parseDate = (value, name) => {
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) throw httpError(400, `Invalid "${name}" date`);
+  return d;
+};
+
+// GET /api/events — discovery; delegates the Mongo query to utils/queries.searchEvents.
+const listEvents = async (req, res) => {
+  const { q, category, from, to, sort, page, limit, past } = req.query;
+  const now = new Date();
+
+  // Query values can be objects (?category[$ne]=x); only accept plain known strings.
+  if (category !== undefined && category !== 'All' && !CATEGORIES.includes(category)) {
+    throw httpError(400, `Category must be one of: ${CATEGORIES.join(', ')}`);
+  }
+  if (sort && !SORTS.includes(sort)) throw httpError(400, `Sort must be one of: ${SORTS.join(', ')}`);
+
+  let fromDate = from ? parseDate(from, 'from') : undefined;
+  let toDate = to ? parseDate(to, 'to') : undefined;
+
+  // Upcoming only by default; past=true flips it to events that already happened.
+  if (past === 'true') {
+    if (!toDate || toDate > now) toDate = now;
+  } else if (!fromDate || fromDate < now) {
+    fromDate = now;
+  }
+
+  const pageLimit = Math.min(50, Math.max(1, parseInt(limit, 10) || 9));
+
+  const result = await searchEvents({
+    q: typeof q === 'string' ? escapeRegex(q) : undefined,
+    category,
+    from: fromDate,
+    to: toDate,
+    sort,
+    page,
+    limit: pageLimit,
+  });
+
+  res.json({ success: true, data: result.events, page: result.page, pages: result.pages, total: result.total });
 };
 
 const createEvent = async (req, res) => {
@@ -57,4 +104,4 @@ const deleteEvent = async (req, res) => {
   res.json({ success: true, data: null, message: 'Event deleted' });
 };
 
-module.exports = { createEvent, getEvent, getMyEvents, updateEvent, deleteEvent, getOwnedEvent };
+module.exports = { listEvents, createEvent, getEvent, getMyEvents, updateEvent, deleteEvent, getOwnedEvent };

@@ -2,6 +2,7 @@ const express = require('express');
 const { body } = require('express-validator');
 
 const {
+  listEvents,
   createEvent,
   getEvent,
   getMyEvents,
@@ -39,6 +40,7 @@ const eventRules = (required) => {
 // Declared before '/:id' so "mine" is not treated as an id.
 router.get('/mine', protect, authorize('organizer', 'admin'), getMyEvents);
 
+router.get('/', listEvents);
 router.post('/', protect, authorize('organizer', 'admin'), eventRules(true), validate, createEvent);
 router.get('/:id', getEvent);
 router.put('/:id', protect, authorize('organizer', 'admin'), eventRules(false), validate, updateEvent);
